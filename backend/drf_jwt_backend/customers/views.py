@@ -9,7 +9,7 @@ from .models import Customer
 from .serializers import CustomerSerializer
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([AllowAny])         #^ May change to IsAuthenticated
 def get_all_customers(request):
     customers = Customer.objects.all()
     serializer = CustomerSerializer(customers, many=True)
@@ -32,10 +32,10 @@ def customer_profile(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['PUT', 'DELETE'])        #moved these views to separate group due to conflict with filter/pk relationship
 @permission_classes([IsAuthenticated])
 def customer_modify(request, pk):
-    customer = get_object_or_404(Customer, pk=pk)
+    customer = get_object_or_404(Customer, pk=pk)       
     if request.method == 'PUT':
         serializer = CustomerSerializer(customer, data=request.data)
         serializer.is_valid(raise_exception=True)
