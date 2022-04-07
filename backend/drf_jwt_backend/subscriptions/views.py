@@ -23,7 +23,7 @@ def subscription_profile(request):
     if request.method == "POST":
         serializer = SubscriptionSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.subscription)
+            serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -32,7 +32,7 @@ def subscription_profile(request):
 @api_view(['PUT', 'DELETE'])        
 @permission_classes([IsAuthenticated])
 def subscription_modify(request, pk):
-    subscription = get_object_or_404(subscription, pk=pk)       
+    subscription = get_object_or_404(Subscription, pk=pk)       
     if request.method == 'PUT':
         serializer = SubscriptionSerializer(subscription, data=request.data)
         serializer.is_valid(raise_exception=True)
