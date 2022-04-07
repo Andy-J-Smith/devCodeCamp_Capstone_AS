@@ -15,7 +15,7 @@ def get_all_customers(request):
     serializer = CustomerSerializer(customers, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def customer_profile(request):
     print(
@@ -30,4 +30,18 @@ def customer_profile(request):
         customer = Customer.objects.filter(user_id=request.user.id)
         serializer = CustomerSerializer(customer, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view(['PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
+def customer_modify(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    if request.method == 'PUT':
+        serializer = CustomerSerializer(customer, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'DELETE':
+        customer.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 

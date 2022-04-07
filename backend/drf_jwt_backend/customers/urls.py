@@ -4,4 +4,5 @@ from customers import views
 urlpatterns = [
     path('', views.customer_profile),
     path('all/', views.get_all_customers),
+    path('<int:pk>/', views.customer_modify),
 ]
