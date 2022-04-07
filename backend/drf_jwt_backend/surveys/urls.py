@@ -3,6 +3,6 @@ from surveys import views
 
 urlpatterns = [
     path('', views.get_all_surveys),
-    # path('all/', views.get_all_customers),
-    # path('<int:pk>/', views.customer_modify),
+    path('<int:pk>/', views.delete_survey),
+    path('new/', views.new_survey),
 ]
