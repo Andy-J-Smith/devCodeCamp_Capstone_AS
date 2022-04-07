@@ -5,5 +5,5 @@ class CustomerSerializer(serializers.ModelSerializer):
 
     class Meta: 
         model = Customer
-        fields = ['id', 'user', 'first_name', 'last_name', 'country', 'street_address', 'apartment', 'city', 'state', 'zip_code', 'phone', 'email_address' ]
+        fields = ['id', 'user', 'country', 'street_address', 'apartment', 'city', 'state', 'zip_code', 'phone']
         depth = 1

@@ -15,9 +15,9 @@ def get_all_customers(request):
     serializer = CustomerSerializer(customers, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
-def customer_profile(request, pk):
+def customer_profile(request):
     print(
         'User ', f"{request.user.id} {request.user.email}{request.user.username}")
     if request.method == "POST":
@@ -27,6 +27,7 @@ def customer_profile(request, pk):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        customer = get_object_or_404(Customer, pk=pk)
-        serializer = CustomerSerializer(Customer)
-        return Response(serializer.data)
+        customer = Customer.objects.filter(user_id=request.user.id)
+        serializer = CustomerSerializer(customer, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
