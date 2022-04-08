@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'cars.apps.CarsConfig', # This app is for example use only
     'customers',
     'surveys',
-    'subscriptions',  
+    'subscriptions',
+    'cart_items',
+    'customer_cart',  
 ]
 
 MIDDLEWARE = [
