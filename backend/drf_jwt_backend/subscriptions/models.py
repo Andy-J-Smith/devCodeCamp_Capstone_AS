@@ -2,9 +2,11 @@
 from django.db import models
 
 class Subscription(models.Model):
-    name = models.CharField(max_length=255)
-    category = models.CharField(max_length=255)
-    level = models.CharField(max_length=255)
-    description = models.CharField(max_length=255, blank=True)
-    quantity = models.IntegerField(default=0)
+    slug = models.SlugField(max_length=255)
+    subscription_type = models.CharField(max_length=255)
+    price = models.IntegerField(default=25)
+    stripe_plan_id = models.CharField(max_length=255)
+
+    def __str__(self) -> str:
+        return self.subscription_type
    
