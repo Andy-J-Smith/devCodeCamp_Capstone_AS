@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import Survey from "../../components/Survey/Survey";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -30,13 +31,14 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.first_name}!</h1>
+      <h1>Home Page for {user.first_name} {user.last_name}!</h1>   //^last_name and email are undefined
       {customers &&
         customers.map((customer) => (
           <p key={customer.id}>
             {customer.country} {customer.street_address} {customer.city}
           </p>
         ))}
+        <Survey/>
     </div>
   );
 };

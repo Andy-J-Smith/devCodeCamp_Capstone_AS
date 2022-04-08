@@ -12,6 +12,9 @@ class Customer(models.Model):
     state = models.CharField(max_length=255)
     zip_code = models.IntegerField(default=0)
     phone = models.IntegerField(default=0)
+
+    def __str__(self) -> str:
+        return self.user
     
     
 
