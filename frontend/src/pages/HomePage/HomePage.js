@@ -9,29 +9,32 @@ const HomePage = () => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
+  const [surveys, setSurveys] = useState([]);
+  const [customers, setCustomers] = useState([]);
+  console.log(user);
 
   useEffect(() => {
-    const fetchCars = async () => {
+    const fetchCustomer = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
+        let response = await axios.get("http://127.0.0.1:8000/api/customers/", {
           headers: {
             Authorization: "Bearer " + token,
           },
         });
-        setCars(response.data);
+        setCustomers(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchCars();
+    fetchCustomer();
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
+      <h1>Home Page for {user.first_name}!</h1>
+      {customers &&
+        customers.map((customer) => (
+          <p key={customer.id}>
+            {customer.country} {customer.street_address} {customer.city}
           </p>
         ))}
     </div>
