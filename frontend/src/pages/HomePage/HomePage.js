@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
+import { useNavigate, Link } from "react-router-dom";
+
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import Survey from "../../components/Survey/Survey";
@@ -12,6 +14,7 @@ const HomePage = () => {
   const [cars, setCars] = useState([]);
   const [surveys, setSurveys] = useState([]);
   const [customers, setCustomers] = useState([]);
+  const navigate = useNavigate();
   console.log(user);
 
   useEffect(() => {
@@ -39,6 +42,7 @@ const HomePage = () => {
           </p>
         ))}
         <Survey/>
+        <button onClick={() => navigate("/checkout")}>Checkout</button>
     </div>
   );
 };

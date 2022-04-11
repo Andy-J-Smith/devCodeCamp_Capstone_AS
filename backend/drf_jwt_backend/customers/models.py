@@ -13,8 +13,8 @@ class Customer(models.Model):
     zip_code = models.IntegerField(default=0)
     phone = models.IntegerField(default=0)
 
-    def __str__(self) -> str:
-        return self.user
+    # def __str__(self) -> str:
+    #     return self.user
     
     
 
