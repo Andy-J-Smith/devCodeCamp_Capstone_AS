@@ -31,7 +31,7 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.first_name} {user.last_name}!</h1>   //^last_name and email are undefined
+      <h1>Home Page for {user.first_name}!</h1>   //^last_name and email are undefined
       {customers &&
         customers.map((customer) => (
           <p key={customer.id}>
