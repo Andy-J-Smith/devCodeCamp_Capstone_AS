@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import AdminPage from "./pages/AdminPage/AdminPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 //stripe
 
@@ -24,7 +25,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/"
+          path="/home"
           element={
             <PrivateRoute>
               <HomePage />
@@ -49,6 +50,7 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LandingPage/>}/>
       </Routes>
       <Footer />
     </div>

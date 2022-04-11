@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { renderMatches } from 'react-router-dom';
 import Survey from '../../components/Survey/Survey';
+import './AdminPage.css'
 
 
 const AdminPage = (props) => {
@@ -20,12 +21,11 @@ const AdminPage = (props) => {
   }
 
   return (
-    <div>
+    <div className='container'>
         <p>Admin Page</p>
         <table className="table">
       <thead>
         <tr>
-          <th>#</th>
           <th>Boat or land</th>
           <th>Frequency</th>
           <th>Species</th>
@@ -37,7 +37,7 @@ const AdminPage = (props) => {
         {survey && survey.map((survey, index) => {
           return (
             <tr key={index}>
-              <td>{index +1}</td>
+             
               <td>{survey.boat_land}</td>
               <td>{survey.frequency}</td>
               <td>{survey.species}</td>

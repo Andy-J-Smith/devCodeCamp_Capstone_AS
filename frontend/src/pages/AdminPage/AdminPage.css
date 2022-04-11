@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    padding: .2em;
+
+}
+
+tbody{
+    padding: 1em;
+}
+
+tr{
+    padding: .5em;
+}
+
+td{
+    padding: .2em;
+    
+}
+
+thead{
+    padding: 1em;
+}

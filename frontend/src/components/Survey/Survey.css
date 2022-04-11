@@ -1,9 +1,13 @@
 .container{
     display: flex;
     flex-direction: column;
+    border-radius: 2%;
 
 }
 
-.form{
-    display: flex;
+button{
+    color: black;
+    border: black solid;
+    background-color: blue;
+    border-radius: 20%;
 }

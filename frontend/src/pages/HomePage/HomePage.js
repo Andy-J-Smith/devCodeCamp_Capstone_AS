@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import Survey from "../../components/Survey/Survey";
+import './HomePage.css'
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -33,7 +34,8 @@ const HomePage = () => {
     fetchCustomer();
   }, [token]);
   return (
-    <div className="container">
+    <div className="home-container">
+      <div className="home">
       <h1>Home Page for {user.first_name}!</h1>   //^last_name and email are undefined
       {customers &&
         customers.map((customer) => (
@@ -41,8 +43,9 @@ const HomePage = () => {
             {customer.country} {customer.street_address} {customer.city}
           </p>
         ))}
+        </div>
         <Survey/>
-        <button onClick={() => navigate("/checkout")}>Checkout</button>
+        
     </div>
   );
 };
