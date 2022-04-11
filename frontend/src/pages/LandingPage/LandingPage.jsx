@@ -4,7 +4,7 @@ import Product from '../../components/Product/Product'
 
 const LandingPage = (props) => {
   return (
-    <div>LandingPage
+    <div>
 
         <Product/>
     </div>

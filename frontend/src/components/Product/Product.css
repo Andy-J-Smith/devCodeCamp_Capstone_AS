@@ -24,8 +24,22 @@
     padding: .5em;
     margin: .1em;
     align-items: center;
+    
 }
 
-p{
+.title-best{
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #7979b9;
+}
+
+image{
+    display: none;
+    width: 50px;
+}
+.card-img-top{
+    display: cover;
+    height: 300px;
+    width: 300px;
     
+
+
 }
