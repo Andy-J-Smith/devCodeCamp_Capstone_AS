@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import "./CheckoutPage.css";
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -10,6 +11,22 @@ const stripePromise = loadStripe(
 );
 
 const CheckoutPage = () => {
+
+  const [cart_item, setCartItem] = useState([])
+
+  useEffect(() => {
+    getCartItem();
+  }, []);
+
+  async function getCartItem(){
+      let response = await axios.get("http://127.0.0.1:8000/api/subscriptions/all/");
+      setCartItem(response.data);
+      console.log(response.data)
+
+  }
+
+
+
   return (
     <div>
       <h2 className="checkout-title">Checkout Page</h2>

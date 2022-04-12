@@ -22,7 +22,9 @@ const Product = (props) => {
   async function createGood(newGood) {
     
     try {
-      const perch = { slug: 'perch_package',
+      const perch = { 
+      user: user,
+      slug: 'perch_package',
       subscription_type: 'Perch Package',
       price: '25',
       stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
@@ -34,7 +36,7 @@ const Product = (props) => {
    
       );
       setGood(newGood);
-      alert('Click the checkout button to proceed');
+      alert('Thank you for selecting the Perch package! Click the checkout button to proceed');
     } catch (error) {
       console.log(error.message);
     }
@@ -43,7 +45,9 @@ const Product = (props) => {
   async function createBetter(newBetter) {
     
     try {
-      const sac_a_lait = { slug: 'sac-a-lait',
+      const sac_a_lait = { 
+    
+      slug: 'sac-a-lait',
       subscription_type: 'Sac-a-Lait Package',
       price: '35',
       stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
@@ -55,7 +59,8 @@ const Product = (props) => {
    
       );
       setBetter(newBetter);
-      alert('Click the checkout button to proceed');
+      alert('Thank you for selecting the Sac-a-lait package! Click the checkout button to proceed');
+      console.log(user.username)
     } catch (error) {
       console.log(error.message);
     }
@@ -64,7 +69,9 @@ const Product = (props) => {
   async function createBest(newBest) {
     
     try {
-      const slab_slayer = { slug: 'slab_slayer',
+      const slab_slayer = { 
+      user: user,  
+      slug: 'slab_slayer',
       subscription_type: 'Slab Slayer Package',
       price: '45',
       stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
@@ -76,7 +83,7 @@ const Product = (props) => {
    
       );
       setBest(newBest);
-      alert('Click the checkout button to proceed');
+      alert('Thank you for selecting the Slab Slayer package! Click the checkout button to proceed');
     } catch (error) {
       console.log(error.message);
     }
@@ -99,7 +106,7 @@ const Product = (props) => {
             <li>Sinkers</li>
             <li>Bobbers</li>
             <li>Fishing Line</li>
-            <p>$25.00</p>
+            <li>$25.00</li>
           </Card.Text>
           <Button onClick= {()=> createGood()}>Add to Cart</Button>
           <Button variant="primary" onClick={() => navigate("/checkout")}>
@@ -129,7 +136,7 @@ const Product = (props) => {
               <li>Spider rig asscessories</li>
               <li>Scent</li>
               <li>Jig Bodies</li>
-              <p>$45.00</p>
+              <li>$45.00</li>
             </Card.Text>
             <Button onClick= {()=> createBest()}>Add to Cart</Button>
             <Button
@@ -159,7 +166,7 @@ const Product = (props) => {
             <li>Fishing Line</li>
             <li>Jig heads</li>
             <li>Crankbaits</li>
-            <p>$35.00</p>
+            <li>$35.00</li>
           </Card.Text>
           <Button onClick= {()=> createBetter()}>Add to Cart</Button>
           <Button variant="primary" onClick={() => navigate("/checkout")}>
