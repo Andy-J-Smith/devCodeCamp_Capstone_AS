@@ -16,8 +16,7 @@ const HomePage = () => {
   const [surveys, setSurveys] = useState([]);
   const [customers, setCustomers] = useState([]);
   const navigate = useNavigate();
-  console.log(user);
-  customers[0] && console.log(customers[0]);
+
 
   useEffect(() => {
     const fetchCustomer = async () => {
