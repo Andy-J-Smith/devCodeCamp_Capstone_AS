@@ -5,5 +5,5 @@ class SubscriptionSerializer(serializers.ModelSerializer):
 
     class Meta: 
         model = Subscription
-        fields = ['id', 'slug', 'subscription_type', 'price', 'stripe_plan_id']
+        fields = ['id', 'user', 'slug', 'subscription_type', 'price', 'stripe_plan_id']
         depth = 1
