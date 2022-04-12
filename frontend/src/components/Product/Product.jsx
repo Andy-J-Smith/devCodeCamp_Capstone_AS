@@ -23,7 +23,6 @@ const Product = (props) => {
     
     try {
       const perch = { 
-      user: user,
       slug: 'perch_package',
       subscription_type: 'Perch Package',
       price: '25',
@@ -60,7 +59,6 @@ const Product = (props) => {
       );
       setBetter(newBetter);
       alert('Thank you for selecting the Sac-a-lait package! Click the checkout button to proceed');
-      console.log(user.username)
     } catch (error) {
       console.log(error.message);
     }
@@ -70,7 +68,7 @@ const Product = (props) => {
     
     try {
       const slab_slayer = { 
-      user: user,  
+
       slug: 'slab_slayer',
       subscription_type: 'Slab Slayer Package',
       price: '45',

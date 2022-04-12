@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    slug = models.SlugField(max_length=255)
     subscription_type = models.CharField(max_length=255)
     price = models.IntegerField(default=25)
     stripe_plan_id = models.CharField(max_length=255)
