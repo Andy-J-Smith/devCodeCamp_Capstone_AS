@@ -26,11 +26,11 @@ const CheckoutPage = () => {
     setCartItem(response.data);
     console.log(response.data);
   }
-  const filteredItem = cart_item.filter(item => item.price === 35);
-  console.log(filteredItem)
-  console.log(user.username)
+  const filteredItem = cart_item.filter(item => item.user.username === user.username);
+ 
   return (
     <div>
+      
       <h2 className="checkout-title">Checkout Page</h2>
       <table className="table">
         <thead>
@@ -41,13 +41,14 @@ const CheckoutPage = () => {
           </tr>
         </thead>
         <tbody>
-          {cart_item &&
-            cart_item.map((cart_item, index) => {
+        
+          {filteredItem &&
+            filteredItem.map((filteredItem, index) => {
               return (
                 <tr key={index}>
                   <td>{user.username}</td>
-                  <td>{cart_item.subscription_type}</td>
-                  <td>{cart_item.price}.00</td>
+                  <td>{filteredItem.subscription_type}</td>
+                  <td>{filteredItem.price}.00</td>
                 </tr>
               );
             })}

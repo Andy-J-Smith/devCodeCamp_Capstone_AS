@@ -6,8 +6,12 @@
 
 .survey-modal {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  margin: 2rem;
+  position: static;
 }
+
+
 
 .survey-form {
   display: flex;
@@ -16,6 +20,8 @@
   align-items: center;
   margin: 0.2rem;
   padding: 0.5rem;
+  position: relative;
+  z-index: 10;
 }
 
 .survey-input {

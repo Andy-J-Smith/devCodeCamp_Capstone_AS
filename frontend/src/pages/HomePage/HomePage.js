@@ -16,7 +16,22 @@ const HomePage = () => {
   const [surveys, setSurveys] = useState([]);
   const [customers, setCustomers] = useState([]);
   const navigate = useNavigate();
+  const [cart_item, setCartItem] = useState([]);
 
+  useEffect(() => {
+    getCartItem();
+  }, []);
+
+  async function getCartItem() {
+    let response = await axios.get(
+      "http://127.0.0.1:8000/api/subscriptions/all/"
+    );
+    setCartItem(response.data);
+    console.log(response.data);
+  }
+  const filteredItem = cart_item.filter(
+    (item) => item.user.username === user.username
+  );
 
   useEffect(() => {
     const fetchCustomer = async () => {
@@ -33,15 +48,19 @@ const HomePage = () => {
     };
     fetchCustomer();
   }, [token]);
+
   return (
     <div className="home-container">
+      <Survey className="survey"/>
       <div className="home">
         {customers &&
           customers.map((customer) => (
             <ul className="customer-info" key={customer.id}>
               <label>Account Information</label>
               <hr></hr>
-              <li>Name: {customer.user.first_name} {customer.user.last_name}</li>
+              <li>
+                Name: {customer.user.first_name} {customer.user.last_name}
+              </li>
               <li>Street: {customer.street_address}</li>
               <li>City: {customer.city}</li>
               <li>State: {customer.state}</li>
@@ -50,7 +69,17 @@ const HomePage = () => {
             </ul>
           ))}
       </div>
-      <Survey />
+      <div className="package">
+        
+        {filteredItem &&
+          filteredItem.map((item) => (
+            <ul key={item.id}>
+              <li>Package: {item.subscription_type}</li>
+              <li>Price: {item.price}.00</li>
+            </ul>
+          ))}
+      </div>
+      
     </div>
   );
 };
