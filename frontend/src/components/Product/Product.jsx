@@ -1,12 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import "./Product.css";
 import Badge from "react-bootstrap/Badge";
+import axios from "axios";
+
+
 
 const Product = (props) => {
   const navigate = useNavigate();
+  const [perchOrder, setPerchOrder] = useState("");
+  const [user, token] = useAuth();
+
+  var axios = require('axios');
+var data = JSON.stringify({
+  "slug": "perch_package",
+  "subscription_type": "Perch Package",
+  "price": 25,
+  "stripe_plan_id": "null"
+});
+
+var config = {
+  method: 'post',
+  url: 'http://127.0.0.1:8000/api/subscriptions/',
+  headers: { 
+    'Authorization': 'Bearer ' + token, 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+// axios(config)
+// .then(function (response) {
+//   console.log(JSON.stringify(response.data));
+// })
+// .catch(function (error) {
+//   console.log(error);
+// });
+
+
+  // async function createPerchOrder(newPerchOrder) {
+    
+  //   try {
+  //     let response = await axios.post(
+  //       "http://127.0.0.1:8000/api/subscriptions/",
+  //       newPerchOrder,
+  //       {
+  //         headers: {
+  //           Authorization: "Bearer " + token,
+          
+  //         },
+  //         data: {
+  //           slug: 'perch_package',
+  //           subscription_type: 'Perch Package',
+  //           price: '25',
+  //           stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'
+
+  //         }
+  //       }
+  //     );
+  //     setPerchOrder(newPerchOrder);
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
+  
   return (
     <div className="product-container">
       <Card className="good" style={{ width: "20rem" }}>
@@ -84,6 +144,7 @@ const Product = (props) => {
             <li>Crankbaits</li>
             <p>$35.00</p>
           </Card.Text>
+          <Button onClick= {()=> axios(config)}>Add to Cart</Button>
           <Button variant="primary" onClick={() => navigate("/checkout")}>
             Check Out
           </Button>
