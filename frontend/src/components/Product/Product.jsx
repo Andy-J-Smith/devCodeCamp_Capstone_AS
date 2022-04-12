@@ -11,61 +11,76 @@ import axios from "axios";
 
 const Product = (props) => {
   const navigate = useNavigate();
-  const [perchOrder, setPerchOrder] = useState("");
+  const [good, setGood] = useState('')
+  const [better, setBetter] = useState('')
+  const [best, setBest] = useState('')
   const [user, token] = useAuth();
 
-  var axios = require('axios');
-var data = JSON.stringify({
-  "slug": "perch_package",
-  "subscription_type": "Perch Package",
-  "price": 25,
-  "stripe_plan_id": "null"
-});
-
-var config = {
-  method: 'post',
-  url: 'http://127.0.0.1:8000/api/subscriptions/',
-  headers: { 
-    'Authorization': 'Bearer ' + token, 
-    'Content-Type': 'application/json'
-  },
-  data : data
-};
-
-// axios(config)
-// .then(function (response) {
-//   console.log(JSON.stringify(response.data));
-// })
-// .catch(function (error) {
-//   console.log(error);
-// });
 
 
-  // async function createPerchOrder(newPerchOrder) {
+
+  async function createGood(newGood) {
     
-  //   try {
-  //     let response = await axios.post(
-  //       "http://127.0.0.1:8000/api/subscriptions/",
-  //       newPerchOrder,
-  //       {
-  //         headers: {
-  //           Authorization: "Bearer " + token,
-          
-  //         },
-  //         data: {
-  //           slug: 'perch_package',
-  //           subscription_type: 'Perch Package',
-  //           price: '25',
-  //           stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'
+    try {
+      const perch = { slug: 'perch_package',
+      subscription_type: 'Perch Package',
+      price: '25',
+      stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
+      
+      const headers = {'Authorization': 'Bearer ' + token};
+      let response = await axios.post(
+        "http://127.0.0.1:8000/api/subscriptions/",
+        perch, {headers}
+   
+      );
+      setGood(newGood);
+      alert('Click the checkout button to proceed');
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
-  //         }
-  //       }
-  //     );
-  //     setPerchOrder(newPerchOrder);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
+  async function createBetter(newBetter) {
+    
+    try {
+      const sac_a_lait = { slug: 'sac-a-lait',
+      subscription_type: 'Sac-a-Lait Package',
+      price: '35',
+      stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
+      
+      const headers = {'Authorization': 'Bearer ' + token};
+      let response = await axios.post(
+        "http://127.0.0.1:8000/api/subscriptions/",
+        sac_a_lait, {headers}
+   
+      );
+      setBetter(newBetter);
+      alert('Click the checkout button to proceed');
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async function createBest(newBest) {
+    
+    try {
+      const slab_slayer = { slug: 'slab_slayer',
+      subscription_type: 'Slab Slayer Package',
+      price: '45',
+      stripe_plan_id: 'price_1KlIuyJ09XIAoeJuCA29eUSZ'};
+      
+      const headers = {'Authorization': 'Bearer ' + token};
+      let response = await axios.post(
+        "http://127.0.0.1:8000/api/subscriptions/",
+        slab_slayer, {headers}
+   
+      );
+      setBest(newBest);
+      alert('Click the checkout button to proceed');
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
   
   return (
     <div className="product-container">
@@ -86,6 +101,7 @@ var config = {
             <li>Fishing Line</li>
             <p>$25.00</p>
           </Card.Text>
+          <Button onClick= {()=> createGood()}>Add to Cart</Button>
           <Button variant="primary" onClick={() => navigate("/checkout")}>
             Check Out
           </Button>
@@ -115,6 +131,7 @@ var config = {
               <li>Jig Bodies</li>
               <p>$45.00</p>
             </Card.Text>
+            <Button onClick= {()=> createBest()}>Add to Cart</Button>
             <Button
               className="tittle-best"
               variant="primary"
@@ -144,7 +161,7 @@ var config = {
             <li>Crankbaits</li>
             <p>$35.00</p>
           </Card.Text>
-          <Button onClick= {()=> axios(config)}>Add to Cart</Button>
+          <Button onClick= {()=> createBetter()}>Add to Cart</Button>
           <Button variant="primary" onClick={() => navigate("/checkout")}>
             Check Out
           </Button>
