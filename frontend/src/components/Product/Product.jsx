@@ -23,6 +23,7 @@ const Product = (props) => {
           <Button variant="primary" onClick={() => navigate("/checkout")}>Check Out</Button>
         </Card.Body>
       </Card>
+      <div className="slab-slayer">
       <Card className="best" style={{ width: "20rem" }}>
         <Card.Img className="image" variant="top" src="https://media.istockphoto.com/photos/fishing-lures-in-tackle-boxes-with-spinning-rod-and-net-picture-id471194270?b=1&k=20&m=471194270&s=170667a&w=0&h=WYYIxubGRHfy5StOmPpn8Y7mQckqlr3G3eMPtfIcpyY=" />
         <Card.Body>
@@ -42,6 +43,7 @@ const Product = (props) => {
           <Button className="tittle-best" variant="primary" onClick={() => navigate("/checkout")}>Check Out</Button>
         </Card.Body>
       </Card>
+      </div>
       <Card className="better" style={{ width: "20rem" }}>
         <Card.Img className="image" variant="top" src="https://images.unsplash.com/photo-1611110176776-ea2a9ba5d376?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmlzaGluZyUyMHRhY2tsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=300&q=60" />
         <Card.Body>

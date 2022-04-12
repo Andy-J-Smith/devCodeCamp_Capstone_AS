@@ -1,13 +1,41 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    border-radius: 2%;
-
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2%;
 }
 
-button{
+.survey-modal {
+  display: flex;
+  justify-content: center;
+}
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 0.5rem;
+}
+
+.survey-input {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 300px;
+  background-color: antiquewhite;
+}
+
+.modal-body {
+  display: flex;
+
+  background-color:whitesmoke;
+}
+
+.survey-form > button{
     color: black;
-    border: black solid;
-    background-color: blue;
-    border-radius: 20%;
+    background-color: lightblue;
+    border: none;
+    border-radius: 1em;
+    margin-top: 1rem;
 }

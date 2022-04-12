@@ -43,3 +43,7 @@ image{
 
 
 }
+
+.slab-slayer{
+    background-image: linear-gradient(red, yellow);
+}

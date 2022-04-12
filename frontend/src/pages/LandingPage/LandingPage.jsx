@@ -5,7 +5,7 @@ import Product from '../../components/Product/Product'
 const LandingPage = (props) => {
   return (
     <div>
-
+<h1 className='landing'>Choose your favorite package</h1>
         <Product/>
     </div>
   )
