@@ -1,11 +1,13 @@
 .product-container{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     
    
 }
 
 .good{
+    display: flex;
     border: solid black;
     padding: .5em;
     margin: .5em;
@@ -13,6 +15,7 @@
 }
 
 .better{
+    display: flex;
     border: solid black;
     padding: .5em;
     margin: .5em;
@@ -20,6 +23,7 @@
 }
 
 .best{
+    display: flex;
     border: solid black;
     padding: .5em;
     margin: .1em;
@@ -45,5 +49,12 @@ image{
 }
 
 .slab-slayer{
-    background-image: linear-gradient(red, yellow);
+    background-image: linear-gradient(orange, yellow);
+    border-radius: .5em;
 }
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
