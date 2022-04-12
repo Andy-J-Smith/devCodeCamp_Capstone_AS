@@ -51,7 +51,7 @@ const HomePage = () => {
 
   return (
     <div className="home-container">
-      <Survey className="survey"/>
+      
       <div className="home">
         {customers &&
           customers.map((customer) => (
