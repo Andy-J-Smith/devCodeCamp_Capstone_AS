@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {loadStripe} from '@stripe/stripe-js';
 import {CardElement, Elements, ElementsConsumer} from "@stripe/react-stripe-js";
-import { useNavigate, Link } from "react-router-dom";
+
 
 
 
@@ -41,9 +41,10 @@ class CheckoutForm extends React.Component {
       alert('Payment Processed...Thank you for your business!')
     }
   };
-  
+ 
 
   render() {
+    
     const {stripe} = this.props;
     
     return (

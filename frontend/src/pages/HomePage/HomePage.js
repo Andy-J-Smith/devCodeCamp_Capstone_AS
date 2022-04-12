@@ -6,7 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import Survey from "../../components/Survey/Survey";
-import './HomePage.css'
+import "./HomePage.css";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -17,6 +17,7 @@ const HomePage = () => {
   const [customers, setCustomers] = useState([]);
   const navigate = useNavigate();
   console.log(user);
+  customers[0] && console.log(customers[0]);
 
   useEffect(() => {
     const fetchCustomer = async () => {
@@ -36,16 +37,21 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <div className="home">
-      <h1>Home Page for {user.first_name}!</h1>   //^last_name and email are undefined
-      {customers &&
-        customers.map((customer) => (
-          <p key={customer.id}>
-            {customer.country} {customer.street_address} {customer.city}
-          </p>
-        ))}
-        </div>
-        <Survey/>
-        
+        {customers &&
+          customers.map((customer) => (
+            <ul className="customer-info" key={customer.id}>
+              <label>Account Information</label>
+              <hr></hr>
+              <li>Name: {customer.user.first_name} {customer.user.last_name}</li>
+              <li>Street: {customer.street_address}</li>
+              <li>City: {customer.city}</li>
+              <li>State: {customer.state}</li>
+              <li>Zip: {customer.zip_code}</li>
+              <li>Email: {customer.user.email}</li>
+            </ul>
+          ))}
+      </div>
+      <Survey />
     </div>
   );
 };
