@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 import {loadStripe} from '@stripe/stripe-js';
 import {CardElement, Elements, ElementsConsumer} from "@stripe/react-stripe-js";
+import { useNavigate, Link } from "react-router-dom";
+
+
 
 class CheckoutForm extends React.Component {
+  
   handleSubmit = async (event) => {
     // Block native form submission.
     event.preventDefault();
 
     const {stripe, elements} = this.props;
+    
 
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
@@ -33,11 +38,14 @@ class CheckoutForm extends React.Component {
       console.log('[error]', error);
     } else {
       console.log('[PaymentMethod]', paymentMethod);
+      alert('Payment Processed...Thank you for your business!')
     }
   };
+  
 
   render() {
     const {stripe} = this.props;
+    
     return (
       <form onSubmit={this.handleSubmit}>
         <CardElement
@@ -59,6 +67,7 @@ class CheckoutForm extends React.Component {
         <button type="submit" disabled={!stripe}>
           Pay
         </button>
+        
       </form>
     );
   }
