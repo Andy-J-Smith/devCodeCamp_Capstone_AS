@@ -47,7 +47,7 @@ const Survey = (props) => {
     };
     console.log(newSurvey);
     createSurvey(newSurvey);
-    alert("Thank you for submitting the survey!");
+   
   }
 
   return (

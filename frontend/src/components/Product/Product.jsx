@@ -9,6 +9,7 @@ import axios from "axios";
 import fish2 from "../../Assets/bluefish1.jpg"
 import fish3 from "../../Assets/fish3.jpg"
 import fish4 from "../../Assets/fish4.jpg"
+import Alert from "react-bootstrap/Alert"
 
 const Product = (props) => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Product = (props) => {
     }
   }
 
+
   return (
     <div className="product-container">
       <Card className="good" style={{ width: "20rem" }}>
@@ -166,6 +168,7 @@ const Product = (props) => {
           </Button>
         </Card.Body>
       </Card>
+    
     </div>
   );
 };
