@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
+import {GiFishCorpse} from 'react-icons/gi'
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -12,12 +13,20 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>Bigbee Slab Tackle Box</b>
+            <b className="logo">Bigbee <span>Slab</span> Tackle Co.</b>
           </Link>
+          <GiFishCorpse className="fish-icon" size={75}/>
+          
         </li>
+          <li><button onClick={()=> navigate("/product")}>Products</button></li>
         <li>
           {user ? (
             <button onClick={() => navigate("/home")}>Account</button>
+          ):""}
+        </li>
+        <li>
+          {user ? (
+            <button onClick={() => navigate("/admin")}>Administrator</button>
           ):""}
         </li>
         <li>

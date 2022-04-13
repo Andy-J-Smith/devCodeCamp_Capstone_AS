@@ -5,6 +5,8 @@ import Survey from "../../components/Survey/Survey";
 import "./AdminPage.css";
 import useAuth from "../../hooks/useAuth";
 import { Chart } from "react-google-charts";
+import SurveyChart from "../../components/SurveyChart/SurveyChart";
+import SalesChart from "../../components/SalesChart/SalesChart";
 
 
 const AdminPage = (props) => {
@@ -12,15 +14,7 @@ const AdminPage = (props) => {
   const [cart_item, setCartItem] = useState([]);
   const [user, token] = useAuth();
 
-  // useEffect(() => {
-  //   getAllSurveys();
-  // }, []);
 
-  // async function getAllSurveys() {
-  //   let response = await axios.get("http://127.0.0.1:8000/api/surveys/");
-  //   setSurvey(response.data);
-  //   console.log(response.data);
-  // }
 
 
   useEffect(() => {
@@ -33,46 +27,12 @@ const AdminPage = (props) => {
     );
     setCartItem(response.data);
   }
-  function generateChartData(){
 
-  let filteredPackages = cart_item.filter(item => item.price >= 25);
-
-  let packages = filteredPackages.map(item => {
-    return item.subscription_type;
-  });
-  console.log('packages: ', packages)
-
- let distinctPackages = [...new Set(packages)]
-console.log(distinctPackages)
-
-let packageArrays = distinctPackages.map(item => {
-  let allItemsForPackages = filteredPackages.filter(e => e.subscription_type === item);
-  let totalSales = allItemsForPackages.reduce(function(sum, current){
-    return sum + current.price;
-  },0)
-  console.log(totalSales)
-
-  return [item, totalSales, 'silver']
-})
-console.log('Package Array', packageArrays)
-
-const data = [[
-  "Package", "Sales", {role: "style"}
-],...packageArrays];
-
-return data;
-  }
-
+  const salesTotal = cart_item.reduce((total, currentValue)=> total = total+currentValue.price,0);
+  console.log(salesTotal)
+  
   return (
     <div className="container">
-       <div>
-      <style>
-          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-          </style>
-         <h1>Sales by Packages</h1>
-         <Chart chartType="ColumnChart" width="100%" height="400px" data={generateChartData()} />
-       
-      </div>
       <p>Sales List</p>
       <table className="table">
         <thead>
@@ -87,14 +47,18 @@ return data;
             cart_item.map((cart_item, index) => {
               return (
                 <tr key={index}>
-                  <td>{user.username}</td>
+                  <td>{cart_item.user.username}</td>
                   <td>{cart_item.subscription_type}</td>
-                  <td>{cart_item.price}</td>
+                  <td> $ {cart_item.price}.00</td>
                 </tr>
               );
             })}
+          <hr />
+            <td><h2>Total Sales: $ {salesTotal}.00</h2></td>
         </tbody>
       </table>
+      {/* {/* <SurveyChart cart_item={cart_item}/> */}
+      <SalesChart cart_item={cart_item}/>
      
     </div>
   );

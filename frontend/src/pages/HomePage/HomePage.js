@@ -29,7 +29,7 @@ const HomePage = () => {
     setCartItem(response.data);
     console.log(response.data);
   }
-  const filteredItem = cart_item.filter(
+  const filteredItem = cart_item.filter(          //^filters over the cart items(subscriptions) and returns only the data that belongs to the logged in user
     (item) => item.user.username === user.username
   );
 
@@ -49,12 +49,15 @@ const HomePage = () => {
     fetchCustomer();
   }, [token]);
 
+
+  const salesTotal = filteredItem.reduce((total, currentValue)=> total = total+currentValue.price,0);  //^totals the price of the subscriptions. The filtered list from the axios request is passed into this so it only returns the total for the logged in user
+
   return (
     <div className="home-container">
       
       <div className="home">
         {customers &&
-          customers.map((customer) => (
+          customers.map((customer) => (                             
             <ul className="customer-info" key={customer.id}>
               <label>Account Information</label>
               <hr></hr>
@@ -75,9 +78,12 @@ const HomePage = () => {
           filteredItem.map((item) => (
             <ul key={item.id}>
               <li>Package: {item.subscription_type}</li>
-              <li>Price: {item.price}.00</li>
+              <li>Price: $ {item.price}.00</li>
+              
             </ul>
+            
           ))}
+          <ul><h3>Monthly Total: $ {salesTotal}.00</h3></ul>
       </div>
       
     </div>

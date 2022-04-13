@@ -1,35 +1,73 @@
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   list-style-type: none;
+  
 }
 
 li {
   font-size: 1.25rem;
+  
 }
 
 .navBar {
-  background: steelblue;
-  box-shadow: 4px 2px 5px gray;
+  background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
+  box-shadow: 4px 2px 5px rgb(41, 128, 185, .5);
   color: white;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
+  height: 90px;
+  position: fixed;
+  width: 100%;
+  top:0;
+  margin-top: 0;
+  
 }
 
 .navBar button {
   background: transparent;
-  border: 2px solid white;
+  border: #2980B9;
   color: white;
   padding: 0.4rem 0.5rem;
+  border-radius: .5rem;
 }
 
 .navBar button:hover {
-  background: white;
-  color: steelblue;
+  background: #6DD5FA;
+  color: #ffffff;
   cursor: pointer;
+  transform: scale(1.15);
 }
 
 .brand {
   cursor: pointer;
   font-size: 2rem;
+}
+
+span{
+  color: #2980B9;
+}
+
+
+.fish-icon{
+  /* background-color:#6DD5FA; */
+  color: #2980B9;
+  position: absolute;
+  left: 1rem;
+  z-index: 0;
+  top:.5rem;
+  padding: .2rem;
+  border-radius: .5rem;
+  
+}
+
+.logo{
+  z-index: 10;
+  left: 6rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.logo:hover{
+  transform: scale(1.19);
 }

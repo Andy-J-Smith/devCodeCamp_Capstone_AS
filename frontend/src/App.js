@@ -16,6 +16,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import AdminPage from "./pages/AdminPage/AdminPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import ProductsPage from "./pages/ProductsPage/ProductsPage";
 
 //stripe
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LandingPage/>}/>
+        <Route path="/product" element={<ProductsPage/>}/>
       </Routes>
       <Footer />
     </div>
