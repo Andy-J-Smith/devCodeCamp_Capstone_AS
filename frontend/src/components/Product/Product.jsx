@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "./Product.css";
 import Badge from "react-bootstrap/Badge";
 import axios from "axios";
+import {GiFishMonster} from 'react-icons/gi'
 
 
 
@@ -117,7 +118,7 @@ const Product = (props) => {
           <Card.Img
             className="image"
             variant="top"
-            src="https://media.istockphoto.com/photos/fishing-lures-in-tackle-boxes-with-spinning-rod-and-net-picture-id471194270?b=1&k=20&m=471194270&s=170667a&w=0&h=WYYIxubGRHfy5StOmPpn8Y7mQckqlr3G3eMPtfIcpyY="
+            src="./"
           />
           <Card.Body>
             <Card.Title>

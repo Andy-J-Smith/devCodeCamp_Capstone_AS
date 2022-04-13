@@ -1,4 +1,4 @@
-.container {
+.modal-container {
   display: flex;
   flex-direction: column;
   border-radius: 2%;
@@ -18,18 +18,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0.2rem;
-  padding: 0.5rem;
-  position: relative;
-  z-index: 10;
+  color: white;
+  margin: 5rem;
+  background: rgba(0,0,0,.75);
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 999;
+
 }
 
 .survey-input {
+  font-size: large;
+  margin: 1rem;
+  color: whitesmoke;
   display: flex;
+  border-radius: .3rem;
   align-items: center;
-  height: 30px;
+  height: 40px;
   width: 300px;
-  background-color: antiquewhite;
+  padding: 1rem;
+  background-color: rgb(109, 213, 250,.2);
 }
 
 .modal-body {
@@ -45,3 +58,4 @@
     border-radius: 1em;
     margin-top: 1rem;
 }
+
