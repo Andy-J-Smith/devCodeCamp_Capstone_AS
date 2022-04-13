@@ -17,7 +17,7 @@ li {
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
   height: 90px;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top:0;
   margin-top: 0;
@@ -30,6 +30,7 @@ li {
   color: white;
   padding: 0.4rem 0.5rem;
   border-radius: .5rem;
+  margin: 1rem
 }
 
 .navBar button:hover {

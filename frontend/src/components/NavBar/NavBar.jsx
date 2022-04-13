@@ -26,7 +26,7 @@ const Navbar = () => {
         </li>
         <li>
           {user ? (
-            <button onClick={() => navigate("/admin")}>Administrator</button>
+            <button onClick={() => navigate("/admin")}>Admin</button>
           ):""}
         </li>
         <li>
