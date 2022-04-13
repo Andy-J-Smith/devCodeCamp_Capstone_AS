@@ -4,19 +4,59 @@
       rgba(172, 155, 155, 0.3)
     ),
     url("../../Assets/hooks.jpeg");
-  display: flex;
   height: 100vh;
-  justify-content: center;
   margin: 0;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  position: relative;
 }
 
 .hero-card {
-
+    background-image: linear-gradient(
+        rgb(109, 213, 250, 0.8),
+        rgb(41, 128, 185, 0.2)
+      ); 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: .5rem;
+  
+
 }
+
+.hero-card-txt{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:rgba(14, 84, 109, 0.8);
+    text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
+}
+
+
+
+.hero-title{
+    display: flex;
+    flex-direction: column;
+  
+    justify-items: center;
+    color:rgba(14, 84, 109, 0.8);
+    text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.hero-card-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+
+
