@@ -1,10 +1,40 @@
-div{
+.checkout-container{
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.check-container{
+.table{
+    display: block;
+    background-color: rgb(109, 213, 250, .2);
+    
+    
+    
+}
+.delete{
+    background-color: rgb(232, 15, 15);
+    padding: .5rem;
+    width: 30px;
+    height: 35px;
+}
+
+.delete:hover{
+    color:whitesmoke;
+    background-color: crimson;
+
+}
+
+.checkout-table-body > tr > td{
+    border-bottom: #6DD5FA .1rem solid;
+}
+
+
+.table-rows > th{
+    border-bottom: .2rem #6DD5FA solid;
+
+}
+.pay-container{
     display: flex;
     flex-direction: row;
     justify-items: center;

@@ -14,5 +14,5 @@ class SubscriptionSerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
     class Meta: 
         model = Subscription
-        fields = ['user','subscription_type', 'price', 'stripe_plan_id' ]
+        fields = ['id','user','subscription_type', 'price', 'stripe_plan_id' ]
         depth = 1
