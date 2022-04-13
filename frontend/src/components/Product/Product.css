@@ -52,7 +52,7 @@ image{
 }
 
 .slab-slayer{
-    background-image: linear-gradient(orange, yellow);
+    background-image: linear-gradient(#2980B9, #6DD5FA);
     border-radius: .5em;
 }
 

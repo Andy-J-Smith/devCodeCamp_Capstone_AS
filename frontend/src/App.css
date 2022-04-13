@@ -18,19 +18,22 @@ p {
 }
 
 button {
-  background-color: transparent;
-  border: 2px solid steelblue;
-  color: steelblue;
+  background-color: #2980b9;
+  border:  #2980b9;
+  color: #ffffff;
   font-size: 1rem;
   font-family: inherit;
   max-width: 100px;
   padding: 0.5rem 0.5rem;
+  border-radius: .5rem;
+  margin: .4rem;
 }
 
 button:hover {
+  background: #6DD5FA;
+  color: #ffffff;
   cursor: pointer;
-  color: white;
-  background-color: steelblue;
+  transform: scale(1.15);
 }
 
 .container {
