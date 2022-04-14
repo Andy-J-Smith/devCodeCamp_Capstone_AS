@@ -11,6 +11,7 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import Survey from "../../components/Survey/Survey";
 import "./HomePage.css";
+import AccountInfo from "../../components/AccountInfo/AccountInfo";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -84,9 +85,10 @@ const HomePage = () => {
                 ))}
             </div>
           </Card.Text>
-          <Button variant="primary">Edit</Button>
+          
         </Card.Body>
       </Card>
+      {/* <AccountInfo/> */}
 
       <div className="package">
         <label>Purchase History</label>

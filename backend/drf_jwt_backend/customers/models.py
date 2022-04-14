@@ -9,7 +9,7 @@ class Customer(models.Model):
     street_address = models.CharField(max_length=255)
     apartment = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255)
-    state = models.CharField(max_length=255)
+    st = models.CharField(max_length=255)
     zip_code = models.IntegerField(default=0)
     phone = models.IntegerField(default=0)
 

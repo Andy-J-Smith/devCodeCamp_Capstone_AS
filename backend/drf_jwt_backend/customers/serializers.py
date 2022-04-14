@@ -9,7 +9,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 
     class Meta: 
         model = Customer
-        fields = ['id', 'user', 'country', 'street_address', 'apartment', 'city', 'state', 'zip_code', 'phone']
+        fields = ['id', 'user', 'country', 'street_address', 'apartment', 'city', 'st', 'zip_code', 'phone']
         depth = 1
 
 
