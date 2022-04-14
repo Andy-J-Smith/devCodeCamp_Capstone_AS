@@ -1,22 +1,50 @@
-.container{
+.container-admin{
     display: flex;
     padding: .2em;
+    margin: 2rem;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
-tbody{
-    padding: 1em;
+.admin-title{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
 }
 
-tr{
-    padding: .5em;
-}
 
-td{
-    padding: .2em;
+.table-admin{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    padding: .5rem;
+    font-size: large;
     
 }
 
-thead{
-    padding: 1em;
+.admin-row{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    padding: .5rem;
+    font-size: large;
+}
+
+.table-admin-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-h{
+    display: flex;
+    justify-content: space-between;
+    font-size: x-large;
+}
+.admin-hd{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    padding: .5rem;
+    font-size: large;
 }

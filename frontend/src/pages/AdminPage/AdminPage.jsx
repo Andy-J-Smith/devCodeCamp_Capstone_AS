@@ -31,24 +31,24 @@ const AdminPage = (props) => {
   console.log(salesTotal);
 
   return (
-    <div className="container">
-      <p>Sales List</p>
-      <table className="table">
-        <thead>
-          <tr>
+    <div className="container-admin">
+      <p className="admin-title">Sales List</p>
+      <table className="table-admin">
+        <thead className="admin-hd">
+          <tr className="admin-h">
             <th>User</th>
             <th>Package</th>
             <th>Price</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table-admin-body">
           {cart_item &&
             cart_item.map((cart_item, index) => {
               return (
-                <tr key={index}>
-                  <td>{cart_item.user.username}</td>
-                  <td>{cart_item.subscription_type}</td>
-                  <td> $ {cart_item.price}.00</td>
+                <tr className="admin-h" key={index}>
+                  <td className="admin-row">{cart_item.user.username}</td>
+                  <td className="admin-row">{cart_item.subscription_type}</td>
+                  <td className="admin-row"> $ {cart_item.price}.00</td>
                 </tr>
               );
             })}
