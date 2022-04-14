@@ -35,13 +35,13 @@ const SalesChart = (props) => {
 
   return (
     <div>
-      {" "}
+      
       <div>
         <style>
           @import
           url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         </style>
-        <h1>Sales by Packages</h1>
+        <h1>Sales by Package</h1>
         <Chart
           chartType="ColumnChart"
           width="100%"

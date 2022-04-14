@@ -8,14 +8,10 @@ import { Chart } from "react-google-charts";
 import SurveyChart from "../../components/SurveyChart/SurveyChart";
 import SalesChart from "../../components/SalesChart/SalesChart";
 
-
 const AdminPage = (props) => {
   const [survey, setSurvey] = useState("");
   const [cart_item, setCartItem] = useState([]);
   const [user, token] = useAuth();
-
-
-
 
   useEffect(() => {
     getCartItem();
@@ -28,9 +24,12 @@ const AdminPage = (props) => {
     setCartItem(response.data);
   }
 
-  const salesTotal = cart_item.reduce((total, currentValue)=> total = total+currentValue.price,0);
-  console.log(salesTotal)
-  
+  const salesTotal = cart_item.reduce(
+    (total, currentValue) => (total = total + currentValue.price),
+    0
+  );
+  console.log(salesTotal);
+
   return (
     <div className="container">
       <p>Sales List</p>
@@ -54,12 +53,17 @@ const AdminPage = (props) => {
               );
             })}
           <hr />
-            <td><h2>Total Sales: $ {salesTotal}.00</h2></td>
+          <td>
+            <h2>Total Sales: $ {salesTotal}.00</h2>
+          </td>
         </tbody>
       </table>
-      {/* {/* <SurveyChart cart_item={cart_item}/> */}
-      <SalesChart cart_item={cart_item}/>
-     
+      <div className="survey">
+        <SurveyChart cart_item={cart_item} />
+      </div>
+      <div className="sales">
+        <SalesChart cart_item={cart_item} />
+      </div>
     </div>
   );
 };
