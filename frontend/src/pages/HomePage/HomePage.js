@@ -2,6 +2,10 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import { useNavigate, Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/esm/Button";
+import fish from "../../Assets/fish.jpeg";
+import ListGroup from "react-bootstrap/ListGroup";
 
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
@@ -29,7 +33,8 @@ const HomePage = () => {
     setCartItem(response.data);
     console.log(response.data);
   }
-  const filteredItem = cart_item.filter(          //^filters over the cart items(subscriptions) and returns only the data that belongs to the logged in user
+  const filteredItem = cart_item.filter(
+    //^filters over the cart items(subscriptions) and returns only the data that belongs to the logged in user
     (item) => item.user.username === user.username
   );
 
@@ -49,43 +54,54 @@ const HomePage = () => {
     fetchCustomer();
   }, [token]);
 
-
-  const salesTotal = filteredItem.reduce((total, currentValue)=> total = total+currentValue.price,0);  //^totals the price of the subscriptions. The filtered list from the axios request is passed into this so it only returns the total for the logged in user
+  const salesTotal = filteredItem.reduce(
+    (total, currentValue) => (total = total + currentValue.price),
+    0
+  ); //^totals the price of the subscriptions. The filtered list from the axios request is passed into this so it only returns the total for the logged in user
 
   return (
     <div className="home-container">
-      
-      <div className="home">
-        {customers &&
-          customers.map((customer) => (                             
-            <ul className="customer-info" key={customer.id}>
-              <label>Account Information</label>
-              <hr></hr>
-              <li>
-                Name: {customer.user.first_name} {customer.user.last_name}
-              </li>
-              <li>Street: {customer.street_address}</li>
-              <li>City: {customer.city}</li>
-              <li>State: {customer.state}</li>
-              <li>Zip: {customer.zip_code}</li>
-              <li>Email: {customer.user.email}</li>
-            </ul>
-          ))}
-      </div>
+      <Card style={{ width: "50rem" }}>
+        <Card.Img variant="top" src={fish} />
+        <Card.Body>
+          <Card.Title></Card.Title>
+          <Card.Text>
+            <div className="home">
+              {customers &&
+                customers.map((customer) => (
+                  <ul className="customer-info" key={customer.id}>
+                    <label>Account Information</label>
+                    <hr></hr>
+                    <li>
+                      Name: {customer.user.first_name} {customer.user.last_name}
+                    </li>
+                    <li>Street: {customer.street_address}</li>
+                    <li>City: {customer.city}</li>
+                    <li>State: {customer.state}</li>
+                    <li>Zip: {customer.zip_code}</li>
+                    <li>Email: {customer.user.email}</li>
+                  </ul>
+                ))}
+            </div>
+          </Card.Text>
+          <Button variant="primary">Edit</Button>
+        </Card.Body>
+      </Card>
+
       <div className="package">
-        
+        <label>Purchase History</label>
+        <hr></hr>
         {filteredItem &&
           filteredItem.map((item) => (
             <ul key={item.id}>
               <li>Package: {item.subscription_type}</li>
               <li>Price: $ {item.price}.00</li>
-              
             </ul>
-            
           ))}
-          <ul><h3>Monthly Total: $ {salesTotal}.00</h3></ul>
+        <ul>
+          <h3>Monthly Total: $ {salesTotal}.00</h3>
+        </ul>
       </div>
-      
     </div>
   );
 };

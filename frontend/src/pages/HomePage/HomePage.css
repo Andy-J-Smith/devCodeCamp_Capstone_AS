@@ -1,21 +1,20 @@
-.container{
+.home-container{
     display: flex;
-    flex-direction: column;
-    background-color: beige;
-    border: solid black;
-    justify-content: flex-end;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.home{
+/* .home{
+    max-height: 500px;
     display: flex;
-    width: 30%;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
     justify-content: left;
-    margin-left: 5rem;
-    padding: .5em;
+    margin: 5rem;
+    padding: 3em;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 
 .customer-info{
     display: flex;
@@ -24,12 +23,13 @@
 }
 
 .package{
+    max-height: 500px;
     display: flex;
-    width: 50%;
     flex-direction: column; 
-    margin-left: 5rem;
-    margin-top: 3rem;
-    padding: .5em;
+    align-items: left;
+    justify-items: left;
+    margin: 5rem;
+    padding: 1rem;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
