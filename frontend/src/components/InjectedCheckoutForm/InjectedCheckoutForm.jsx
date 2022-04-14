@@ -7,7 +7,7 @@ import './InjectedCheckoutForm.css';
 
 const InjectedCheckoutForm = () => {
     return (
-      <div>
+      <div className="injected-form">
       <ElementsConsumer>
         {({elements, stripe}) => (
           <CheckoutForm elements={elements} stripe={stripe} />

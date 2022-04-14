@@ -51,7 +51,7 @@ const CheckoutPage = () => {
   return (
     <div className="checkout-container">
       <h2 className="checkout-title">Cart</h2>
-      <table className="table">
+      <table className="checkout-table">
         <thead>
           <tr className="table-rows">
             <th>Username</th>
