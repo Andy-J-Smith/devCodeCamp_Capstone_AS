@@ -88,7 +88,7 @@ const HomePage = () => {
           
         </Card.Body>
       </Card>
-      {/* <AccountInfo/> */}
+      <AccountInfo/>
 
       <div className="package">
         <label>Purchase History</label>

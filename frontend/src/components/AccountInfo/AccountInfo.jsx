@@ -6,20 +6,27 @@ import Button from "react-bootstrap/esm/Button";
 
 const AccountInfo = (props) => {
     const [customers, setCustomers] = useState([]);
-    const [country, setCountry] = useState(customers.country)
-    const [street_address, setStreetAddress] = useState(customers.street_address)
-    const [apartment, setApartment] = useState(customers.apartment)
-    const [city, setCity] = useState(customers.city)
-    const [st, setSt] = useState(customers.st)
-    const [zip_code, setZipCode] = useState(customers.zip_code)
-    const [phone, setPhone] = useState(customers.phone)
-    const [user, token] = useAuth();
+  
+    const [country, setCountry] = useState([])
+    const [street_address, setStreetAddress] = useState([])
+    const [apartment, setApartment] = useState([])
+    const [city, setCity] = useState([])
+    const [st, setSt] = useState([])
+    const [zip_code, setZipCode] = useState([])
+    const [phone, setPhone] = useState([])
+    const [user, token] = useAuth([]);
   
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
+  const custId = customers.map((item)=> {
+    return item.id;
+  }) 
+  
+  
     useEffect(() => {
         const fetchCustomer = async () => {
           try {
@@ -29,7 +36,7 @@ const AccountInfo = (props) => {
               },
             });
             setCustomers(response.data);
-            console.log(customers)
+            console.log(response.data)
           } catch (error) {
             console.log(error.message);
           }
@@ -37,22 +44,19 @@ const AccountInfo = (props) => {
         fetchCustomer();
       }, [token]);
   
-    async function updateAddress(id) {
+    async function updateAddress(id, updatedCust) {
       try {
         let response = await axios.put(
-          `http://127.0.0.1:8000/api/customers/${id}/`,
-          
-        
-          
-          {
+          `http://127.0.0.1:8000/api/customers/` + id +`/`,{
             headers: {
               Authorization: "Bearer " + token,
             },
           }
         );
-        setCustomers();
+        setCustomers(updatedCust);
       } catch (error) {
         console.log(error.message);
+        console.log(token)
       }
     }
   
@@ -67,8 +71,8 @@ const AccountInfo = (props) => {
         zip_code: zip_code,
         phone: phone,
     }
-    updateAddress(user.id);
-    console.log(user.id);
+    updateAddress(custId);
+    console.log(updatedCust);
 }
   
     return (
@@ -89,7 +93,7 @@ const AccountInfo = (props) => {
                 <input className="survey-input"
                   type="text"
                   placeholder="country"
-                  value={country}
+                  value={handleUpdate.country}
                   onChange={(event) => setCountry(event.target.value)}
                 />
                 <label>Street:</label>
@@ -98,7 +102,7 @@ const AccountInfo = (props) => {
                   placeholder="street_address"
                   value={handleUpdate.street_address}
                   onChange={(event) => setStreetAddress(event.target.value)}
-                  required
+                  
                 />
                 <label>Apartment:</label>
                 <input className="survey-input"

@@ -34,9 +34,7 @@ const Product = (props) => {
         { headers }
       );
       setGood(newGood);
-      alert(
-        "Thank you for selecting the Perch package! Click the checkout button to proceed"
-      );
+   
     } catch (error) {
       console.log(error.message);
     }
@@ -58,9 +56,7 @@ const Product = (props) => {
         { headers }
       );
       setBetter(newBetter);
-      alert(
-        "Thank you for selecting the Sac-a-lait package! Click the checkout button to proceed"
-      );
+     
     } catch (error) {
       console.log(error.message);
     }
@@ -82,9 +78,7 @@ const Product = (props) => {
         { headers }
       );
       setBest(newBest);
-      alert(
-        "Thank you for selecting the Slab Slayer package! Click the checkout button to proceed"
-      );
+   
     } catch (error) {
       console.log(error.message);
     }
