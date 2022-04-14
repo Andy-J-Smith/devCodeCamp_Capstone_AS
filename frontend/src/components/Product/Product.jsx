@@ -6,10 +6,10 @@ import { useNavigate, Link } from "react-router-dom";
 import "./Product.css";
 import axios from "axios";
 
-import fish2 from "../../Assets/bluefish1.jpg"
-import fish3 from "../../Assets/fish3.jpg"
-import fish4 from "../../Assets/fish4.jpg"
-import Alert from "react-bootstrap/Alert"
+import fish2 from "../../Assets/bluefish1.jpg";
+import fish3 from "../../Assets/fish3.jpg";
+import fish4 from "../../Assets/fish4.jpg";
+import Alert from "react-bootstrap/Alert";
 
 const Product = (props) => {
   const navigate = useNavigate();
@@ -90,7 +90,6 @@ const Product = (props) => {
     }
   }
 
-
   return (
     <div className="product-container">
       <Card className="good" style={{ width: "20rem" }}>
@@ -107,13 +106,10 @@ const Product = (props) => {
             <li>$25.00</li>
           </Card.Text>
           <Button onClick={() => createGood()}>Add to Cart</Button>
-          <Button variant="primary" onClick={() => navigate("/checkout")}>
-            Check Out
-          </Button>
         </Card.Body>
       </Card>
       <div className="slab-slayer">
-        <Card className="best" style={{ width: "25rem",  height: "50rem" }}>
+        <Card className="best" style={{ width: "25rem", height: "50rem" }}>
           <Card.Img className="image" variant="top" src={fish3} />
           <Card.Body>
             <Card.Title>
@@ -133,22 +129,11 @@ const Product = (props) => {
               <li>$45.00</li>
             </Card.Text>
             <Button onClick={() => createBest()}>Add to Cart</Button>
-            <Button
-              className="tittle-best"
-              variant="primary"
-              onClick={() => navigate("/checkout")}
-            >
-              Check Out
-            </Button>
           </Card.Body>
         </Card>
       </div>
       <Card className="better" style={{ width: "20rem" }}>
-        <Card.Img
-          className="image"
-          variant="top"
-          src={fish4}
-        />
+        <Card.Img className="image" variant="top" src={fish4} />
         <Card.Body>
           <Card.Title>
             <h2>Sac-a-Lait Package</h2>
@@ -163,12 +148,8 @@ const Product = (props) => {
             <li>$35.00</li>
           </Card.Text>
           <Button onClick={() => createBetter()}>Add to Cart</Button>
-          <Button variant="primary" onClick={() => navigate("/checkout")}>
-            Check Out
-          </Button>
         </Card.Body>
       </Card>
-    
     </div>
   );
 };

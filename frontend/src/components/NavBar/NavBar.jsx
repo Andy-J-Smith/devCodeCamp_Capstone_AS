@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 import {GiFishCorpse} from 'react-icons/gi'
+import {BsCartDash} from 'react-icons/bs'
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -22,6 +23,11 @@ const Navbar = () => {
         <li>
           {user ? (
             <button onClick={() => navigate("/home")}>Account</button>
+          ):""}
+        </li>
+        <li>
+          {user ? (
+            <button onClick={() => navigate("/checkout")}><BsCartDash/></button>
           ):""}
         </li>
         <li>
