@@ -6,6 +6,7 @@ import Button from "react-bootstrap/esm/Button";
 
 const AccountInfo = (props) => {
     const [customers, setCustomers] = useState([]);
+    const [address, setAddress] = useState([])
   
     const [country, setCountry] = useState([])
     const [street_address, setStreetAddress] = useState([])
@@ -22,10 +23,7 @@ const AccountInfo = (props) => {
     const handleShow = () => setShow(true);
 
 
-  const custId = customers.map((item)=> {
-    return item.id;
-  }) 
-  
+
   
     useEffect(() => {
         const fetchCustomer = async () => {
@@ -42,18 +40,21 @@ const AccountInfo = (props) => {
           }
         };
         fetchCustomer();
-      }, [token]);
+        
+      }, []);
+
+      
   
     async function updateAddress(id, updatedCust) {
       try {
         let response = await axios.put(
-          `http://127.0.0.1:8000/api/customers/` + id +`/`,{
+          `http://127.0.0.1:8000/api/customers/` + id +`/`,updatedCust,{
             headers: {
               Authorization: "Bearer " + token,
             },
           }
         );
-        setCustomers(updatedCust);
+        setAddress(updatedCust);
       } catch (error) {
         console.log(error.message);
         console.log(token)
@@ -71,10 +72,14 @@ const AccountInfo = (props) => {
         zip_code: zip_code,
         phone: phone,
     }
-    updateAddress(custId);
-    console.log(updatedCust);
+    updateAddress(customers[0].id, updatedCust);
+
+  
+   
 }
   
+
+
     return (
       <div>
         <div className="survey-modal">

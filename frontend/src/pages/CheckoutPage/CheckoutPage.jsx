@@ -4,17 +4,20 @@ import "./CheckoutPage.css";
 import useAuth from "../../hooks/useAuth";
 import { IoTrashBinOutline } from "react-icons/io5";
 
+
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import InjectedCheckoutForm from "../../components/InjectedCheckoutForm/InjectedCheckoutForm";
+import AlertRemove from "../../components/AlertRemove/AlertRemove";
 
 const stripePromise = loadStripe(
   "pk_test_51KlIfWJ09XIAoeJupGMpaF7KTJKTIshrlouOOmwjFJ2S52vKIiHv98vMELWzh6RTWuhFLYTsWyUK3U7cAnomp51K00ilYgZnN9"
 );
 
-const CheckoutPage = () => {
+const CheckoutPage = (props) => {
   const [cart_item, setCartItem] = useState([]);
   const [user, token] = useAuth();
+ 
 
   useEffect(() => {
     getCartItem();
@@ -32,7 +35,7 @@ const CheckoutPage = () => {
   );
 
   async function removeItem(id) {
-    console.log("id",id)
+    console.log("id", id);
     try {
       let response = await axios.delete(
         `http://127.0.0.1:8000/api/subscriptions/${id}/`,
@@ -47,7 +50,7 @@ const CheckoutPage = () => {
       console.log(error.message);
     }
   }
- 
+
   return (
     <div className="checkout-container">
       <h2 className="checkout-title">Cart</h2>
@@ -62,18 +65,25 @@ const CheckoutPage = () => {
         <tbody className="checkout-table-body">
           {filteredItem &&
             filteredItem.map((filteredItem, index) => {
-              console.log(filteredItem)
+              console.log(filteredItem);
               return (
                 <tr key={index}>
                   <td>{user.username}</td>
                   <td>{filteredItem.subscription_type}</td>
                   <td>{filteredItem.price}.00</td>
-                  <button onClick={()=> removeItem(filteredItem.id)} className="delete"><IoTrashBinOutline/></button>
+                  <button
+                    className="delete"
+                    onClick={() => removeItem(filteredItem.id)}
+                  >
+                    <IoTrashBinOutline />
+                  </button>
                 </tr>
               );
             })}
         </tbody>
       </table>
+      <AlertRemove/>
+
       <p>Enter Credit Card Information</p>
       <div className="pay-container">
         <Elements stripe={stripePromise}>

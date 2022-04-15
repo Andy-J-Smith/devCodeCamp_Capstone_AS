@@ -3,8 +3,7 @@ import Chart from "react-google-charts";
 import axios from "axios";
 
 const SurveyChart = (props) => {
-
-const [survey, setSurvey] = useState([])
+  const [survey, setSurvey] = useState([]);
 
   useEffect(() => {
     getAllSurveys();
@@ -15,41 +14,39 @@ const [survey, setSurvey] = useState([])
     setSurvey(response.data);
     console.log(response.data);
   }
-function generateChartData(){
-  const style = survey.map((item) => {
-    return item.style;
-  });
-  console.log("style", style)
+  function generateChartData() {
+    const style = survey.map((item) => {
+      return item.style;
+    });
+    console.log("style", style);
 
-  let distStyles = [...new Set(style)];
+    let distStyles = [...new Set(style)];
     console.log(distStyles);
 
-  let styleArray = distStyles.map((item)=> {
-
-    
-    const count = [];
-    for (const el of style){
-      if (count [el]){
-        count[el] += 1;
+    let styleArray = distStyles.map((item) => {
+      const count = [];
+      for (const el of style) {
+        if (count[el]) {
+          count[el] += 1;
+        } else {
+          count[el] = 1;
+        }
       }
-      else {
-        count[el] = 1;
-      }
-    }
-  console.log("count",count)
-  return [ "style", count.live, count.artificial,  "red"];
-  
-});
+      console.log("count", count);
 
-const data = [["style","Live Bait", "Artificial Bait",{ role: "style" } ],
-...styleArray]
-console.log(styleArray)
-return data;
+      return ["style", count.live, count.artificial, "red"];
+    });
 
+    const data = [
+      ["style", "Live Bait", "Artificial Bait", { role: "style" }],
+      ...styleArray,
+    ];
+    console.log(styleArray);
+    return data;
   }
-  return <div>
-
-<div>
+  return (
+    <div>
+      <div>
         <style>
           @import
           url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -62,7 +59,8 @@ return data;
           data={generateChartData()}
         />
       </div>
-  </div>;
+    </div>
+  );
 };
 
 export default SurveyChart;

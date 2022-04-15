@@ -13,7 +13,7 @@ import Survey from "../../components/Survey/Survey";
 import "./HomePage.css";
 import AccountInfo from "../../components/AccountInfo/AccountInfo";
 
-const HomePage = () => {
+const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
@@ -78,7 +78,7 @@ const HomePage = () => {
                     </li>
                     <li>Street: {customer.street_address}</li>
                     <li>City: {customer.city}</li>
-                    <li>State: {customer.state}</li>
+                    <li>State: {customer.st}</li>
                     <li>Zip: {customer.zip_code}</li>
                     <li>Email: {customer.user.email}</li>
                   </ul>
