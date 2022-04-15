@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    height: 100vh;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.75fr 2fr;
+    grid-template-rows: 1fr 4fr 3fr 1fr;
+    grid-template-areas:
+      "header       header        header"
+      "main       main        picture"
+      "mid-left   mid-left   picture"
+      "mid-left     mid-left      picture";
+  
+    height: 100vh;
+    margin: 2em;
+  }
+  
+  main {
+    grid-area: main;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: justify;
+    border:#2980b9 solid;
+   background-color: #6dd5fa;
+  
+  }
+
+  
+  .mid-right {
+    grid-area: mid-left;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-bottom: #2980b9 solid;
+    border-right: #2980b9 solid;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgb(0,0,0,.3)),url("../../Assets/bait.jpeg") no-repeat center;
+
+  }
+  
+  /* .mid-left {
+    grid-area: mid-right;
+    border-left: #2980b9 solid;
+    border-right: #2980b9 solid;
+    border-bottom: #2980b9 solid;
+    background-size: cover;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgb(0,0,0,.3)),url("../../Assets/bait2.jpeg");
+
+  } */
+  
+
+  
+  header {
+    background-image: linear-gradient(
+        rgb(109, 213, 250, 0.8),
+        rgb(41, 128, 185, 0.2)
+      );
+    grid-area: header;
+    text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
+    font-size: xx-large;
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  
+    
+    
+  }
+ 
+  
+  .picture {
+    grid-area: picture;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgb(0,0,0,.3)),url("../../Assets/reel.jpeg");
+    background-size: cover;
+  }

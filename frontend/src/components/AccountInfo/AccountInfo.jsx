@@ -72,9 +72,7 @@ const AccountInfo = (props) => {
         zip_code: zip_code,
         phone: phone,
     }
-    updateAddress(customers[0].id, updatedCust);
-
-  
+    updateAddress(customers[0].id, updatedCust);  
    
 }
   

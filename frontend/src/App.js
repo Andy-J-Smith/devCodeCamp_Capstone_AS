@@ -17,6 +17,7 @@ import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import AdminPage from "./pages/AdminPage/AdminPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 //stripe
 
@@ -53,6 +54,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/product" element={<ProductsPage/>}/>
+        <Route path="/product-detail" element={<ProductDetail/>}/>
       </Routes>
       <Footer />
     </div>

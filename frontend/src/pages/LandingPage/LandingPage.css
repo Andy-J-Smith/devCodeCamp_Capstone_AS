@@ -3,8 +3,8 @@
       rgba(213, 204, 204, 0.3),
       rgba(172, 155, 155, 0.3)
     ),
-    url("../../Assets/hooks.jpeg");
-  height: 100vh;
+    url("../../Assets/background.jpeg");
+  height: 80vh;
   margin: 0;
   color: #ffffff;
   display: flex;
@@ -58,5 +58,10 @@
     justify-items: center;
 }
 
+
+.hero-card-img{
+  display: flex;
+  
+}
 
 
