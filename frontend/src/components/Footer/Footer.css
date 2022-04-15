@@ -19,11 +19,6 @@ footer {
   text-decoration: none;
 }
 
-.about {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-}
 
 .copy {
   display: flex;
@@ -31,4 +26,22 @@ footer {
   align-items: center;
   color: #2980b9;
   justify-items: center;
+}
+
+
+.git-icon{
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+  color:white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slab-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
 }

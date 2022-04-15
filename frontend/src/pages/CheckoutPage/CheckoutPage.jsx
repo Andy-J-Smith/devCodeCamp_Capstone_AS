@@ -82,7 +82,7 @@ const CheckoutPage = (props) => {
             })}
         </tbody>
       </table>
-      <AlertRemove/>
+      
 
       <p>Enter Credit Card Information</p>
       <div className="pay-container">
