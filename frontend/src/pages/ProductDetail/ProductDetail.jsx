@@ -33,6 +33,12 @@ const ProductDetail = (props) => {
             options available. We stand behind ALL of our products. 100 percent money back
             guarantee!
         </p>
+        <p>
+        If your goal is to become a better angler, catch bigger fish and crush your current PB, 
+        then this is the box for you! Every month our Pros will hand-select the best baits for the region 
+        of the country where you live & fish.  We'll make sure they're the right color, size and everything. 
+        Literally everything, so there's no guesswork as to which baits will work.  
+        </p>
         
     </main>
     <div className="mid-right"></div>

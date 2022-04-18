@@ -185,6 +185,9 @@ const Product = (props) => {
       <GiFishing />
       FREE SHIPPING IN THE USA
     </ListGroupItem>
+    <ListGroupItem className="price">
+      $25.00
+    </ListGroupItem>
   </ListGroup>
   <Card.Body>
   <Button onClick={() => createGood()}>Add to Cart</Button>
@@ -224,6 +227,9 @@ const Product = (props) => {
       <GiFishing />
       FREE SHIPPING IN THE USA
     </ListGroupItem>
+    <ListGroupItem className="price">
+      $45.00   <span>Best Deal!</span> 
+    </ListGroupItem>
   </ListGroup>
   <Card.Body>
   <Button onClick={() => createBest()}>Add to Cart</Button>
@@ -261,6 +267,9 @@ const Product = (props) => {
     <ListGroupItem>
       <GiFishing />
       FREE SHIPPING IN THE USA
+    </ListGroupItem>
+    <ListGroupItem className="price">
+      $35.00
     </ListGroupItem>
   </ListGroup>
   <Card.Body>

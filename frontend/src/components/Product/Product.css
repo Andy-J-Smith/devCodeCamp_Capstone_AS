@@ -119,3 +119,11 @@ image {
   display: flex;
   flex-direction: column;
 }
+
+.price{
+  display: flex;
+  font-size: xx-large;
+  justify-content: space-evenly;
+  text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
+  
+}
