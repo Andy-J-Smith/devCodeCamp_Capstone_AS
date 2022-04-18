@@ -24,7 +24,7 @@ const SalesChart = (props) => {
       }, 0);
       console.log(totalSales);
 
-      return [item, totalSales, "silver"];
+      return [item, totalSales, "steel blue"];
     });
     console.log("Package Array", packageArrays);
 
