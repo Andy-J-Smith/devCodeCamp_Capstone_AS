@@ -18,6 +18,7 @@ import AdminPage from "./pages/AdminPage/AdminPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import About from "./pages/About/About";
 
 //stripe
 
@@ -55,6 +56,7 @@ function App() {
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/product" element={<ProductsPage/>}/>
         <Route path="/product-detail" element={<ProductDetail/>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
       <Footer />
     </div>
