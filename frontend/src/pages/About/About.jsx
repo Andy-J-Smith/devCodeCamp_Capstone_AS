@@ -15,7 +15,8 @@ const About = () => {
     </p>
     
     <p>
-    We are a veteran owned company that loves to catch fish and enjoy the outdoors!   
+    We are a veteran owned company that loves to catch fish and enjoy the outdoors!
+    We even include a bonus bait, hand tied by our owner, the <span>Bigbee Slab</span> himself!   
     </p>
     
 </main>
