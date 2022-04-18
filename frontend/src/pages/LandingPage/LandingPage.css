@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    color:rgba(14, 84, 109, 0.8);
+    color:#A35400;
     text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
 }
 
@@ -45,7 +45,7 @@
     flex-direction: column;
   
     justify-items: center;
-    color:rgba(14, 84, 109, 0.8);
+    color:#A35400;
     text-shadow: 0 0 3px #2980b9, 0 0 5px #6dd5fa;
     font-size: xx-large;
     text-align: center;
