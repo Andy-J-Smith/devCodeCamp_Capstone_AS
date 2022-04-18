@@ -12,6 +12,7 @@ import useAuth from "../../hooks/useAuth";
 import Survey from "../../components/Survey/Survey";
 import "./HomePage.css";
 import AccountInfo from "../../components/AccountInfo/AccountInfo";
+import Billing from "../../components/AccountInfo/Billing";
 
 const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -89,6 +90,7 @@ const HomePage = (props) => {
         </Card.Body>
       </Card>
       <AccountInfo/>
+      <Billing/>
 
       <div className="package">
         <label>Purchase History</label>
