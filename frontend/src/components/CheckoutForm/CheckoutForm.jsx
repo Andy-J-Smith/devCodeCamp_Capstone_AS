@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {loadStripe} from '@stripe/stripe-js';
 import {CardElement, Elements, ElementsConsumer} from "@stripe/react-stripe-js";
-
+import swal from 'sweetalert'
 
 
 
@@ -38,7 +38,12 @@ class CheckoutForm extends React.Component {
       console.log('[error]', error);
     } else {
       console.log('[PaymentMethod]', paymentMethod);
-      alert('Payment Processed...Thank you for your business!')
+      swal({
+        title: "Payment Submitted!",
+        text: "THANKS!",
+        icon: "success",
+        button: "Proceed!",
+      });
     }
   };
  

@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import "./Survey.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/esm/Button";
+import swal from 'sweetalert'
 
 const Survey = (props) => {
   const [species, setSpecies] = useState("");
@@ -31,6 +32,7 @@ const Survey = (props) => {
         }
       );
       setSurvey(newSurvey);
+      swal("Survey Submitted","Thank You!", "success");
     } catch (error) {
       console.log(error.message);
     }
@@ -47,8 +49,10 @@ const Survey = (props) => {
     };
     console.log(newSurvey);
     createSurvey(newSurvey);
-   
+    
   }
+
+  
 
   return (
     <div>

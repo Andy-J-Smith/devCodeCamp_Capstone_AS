@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CheckoutPage.css";
 import useAuth from "../../hooks/useAuth";
-import { IoTrashBinOutline } from "react-icons/io5";
+import {  IoTrashBinOutline } from "react-icons/io5";
+import swal from 'sweetalert'
+
 
 
 import { Elements } from "@stripe/react-stripe-js";
@@ -45,11 +47,29 @@ const CheckoutPage = (props) => {
           },
         }
       );
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover your order",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((removeItem) => {
+        if (removeItem) {
+          swal("Poof! Your order has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your order is safe!");
+        }
+      });
       getCartItem();
+   
     } catch (error) {
       console.log(error.message);
     }
   }
+  
 
   return (
     <div className="checkout-container">
@@ -71,15 +91,16 @@ const CheckoutPage = (props) => {
                   <td>{user.username}</td>
                   <td>{filteredItem.subscription_type}</td>
                   <td>{filteredItem.price}.00</td>
-                  <button
+                  <button 
                     className="delete"
                     onClick={() => removeItem(filteredItem.id)}
-                  >
+                  > 
                     <IoTrashBinOutline />
                   </button>
                 </tr>
               );
             })}
+
         </tbody>
       </table>
       
