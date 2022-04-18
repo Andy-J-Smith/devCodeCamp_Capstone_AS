@@ -3,7 +3,7 @@
       rgba(213, 204, 204, 0.3),
       rgba(172, 155, 155, 0.3)
     ),
-    url("../../Assets/background.jpeg");
+    url("../../Assets/background.jpeg") center center/cover;
   height: 80vh;
   margin: 0;
   color: #ffffff;
