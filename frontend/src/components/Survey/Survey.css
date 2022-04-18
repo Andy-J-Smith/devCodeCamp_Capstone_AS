@@ -59,3 +59,11 @@
     margin-top: 1rem;
 }
 
+/* .swal-modal {
+  background-color: rgb(109, 213, 250,.69);
+  border: 3px solid white;
+} */
+
+.swal-overlay {
+  background-color: rgba(43, 165, 137, 0.45);
+}
