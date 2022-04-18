@@ -39,6 +39,9 @@ const Navbar = () => {
           )}
         </li>
         <li>
+          <button onClick={() => navigate("/about")}>About</button>
+        </li>
+        <li>
           {user ? (
             <button onClick={() => navigate("/checkout")}>
               <BsCartDash />
@@ -47,9 +50,7 @@ const Navbar = () => {
             ""
           )}
         </li>
-        <li>
-          <button onClick={() => navigate("/about")}>About</button>
-        </li>
+       
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>

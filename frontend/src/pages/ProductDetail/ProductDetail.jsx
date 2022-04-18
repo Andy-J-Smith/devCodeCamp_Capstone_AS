@@ -16,7 +16,7 @@ const ProductDetail = (props) => {
   // };
 
   return (
-    <div class="grid-container">
+    <div class="product-grid-container">
         <header>
             <h1>Product Detail</h1>
         </header>

@@ -3,7 +3,7 @@ body {
     height: 100vh;
   }
   
-  .grid-container {
+  .product-grid-container {
     display: grid;
     grid-template-columns: 1fr 1.75fr 2fr;
     grid-template-rows: 1fr 4fr 3fr 1fr;
@@ -37,7 +37,7 @@ body {
     text-align: center;
     border-bottom: #2980b9 solid;
     border-right: #2980b9 solid;
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgb(0,0,0,.3)),url("../../Assets/bait.jpeg") no-repeat center;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgb(0,0,0,.3)),url("../../Assets/bait.jpeg") no-repeat center center/cover;
 
   }
   
