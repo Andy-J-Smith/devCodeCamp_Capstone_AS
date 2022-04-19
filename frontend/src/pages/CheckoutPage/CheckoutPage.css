@@ -7,6 +7,10 @@
     justify-content: justify;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: linear-gradient(
+        rgb(109, 213, 250, 0.8),
+        rgb(41, 128, 185, 0.2)
+      ); 
    
 }
 
@@ -37,6 +41,7 @@
     align-items: center;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
 }
 
 .checkout-table-body{
@@ -65,14 +70,14 @@
     border-bottom: .2rem #6DD5FA solid;
 
 }
-.pay-container{
+/* .pay-container{
     display: flex;
     flex-direction: row;
     justify-items: center;
     align-items: center;
     
     
-}
+} */
 
 .StripeElement{
     display: flex;
@@ -93,3 +98,17 @@
     justify-content: center;
 
 } */
+
+
+.pay-container{
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    border-radius: .5em;
+
+}
