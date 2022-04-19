@@ -58,9 +58,9 @@ const AdminPage = (props) => {
           </td>
         </tbody>
       </table>
-      <div className="survey">
+      {/* <div className="survey">
         <SurveyChart cart_item={cart_item} />
-      </div>
+      </div> */}
       <div className="sales">
         <SalesChart cart_item={cart_item} />
       </div>

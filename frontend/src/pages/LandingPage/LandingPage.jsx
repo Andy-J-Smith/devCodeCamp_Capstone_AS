@@ -4,6 +4,7 @@ import Survey from "../../components/Survey/Survey";
 import poster from '../../Assets/posters.jpg';
 import Card from 'react-bootstrap/Card'
 import reel from '../../Assets/reel.jpeg'
+import Survey2 from "../../components/Survey/Survey2";
 
 const LandingPage = (props) => {
   return (
@@ -18,7 +19,8 @@ const LandingPage = (props) => {
           <Card.Img className='hero-card-img'variant="top" src={poster} />
 
         </Card.Body>
-        <Survey/>
+        {/* <Survey/> */}
+        {/* <Survey2/> */}
       </Card>
     </div>
   );
